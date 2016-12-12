@@ -1,3 +1,4 @@
+// Dalton particle example for CC1
 
 var createParticle = function() {
     return { x: random(-10, 10), y: random(-10, 10), age: 0, speed: random(0.2, 2), startX: random(-360, 360) };
@@ -22,16 +23,16 @@ var draw = function() {
         particle.age++;
         particle.y -= particle.speed;
     }
-    
+
     for (var i = particles.length - 1; i >= 0; i--) {
         var particle = particles[i];
         if (particle.age > 50) {
             particles.splice(i, 1);
         }
     }
-    
+
     for (var i = 0; i < 30; i++) {
         particles.push(createParticle());
     }
-    
+
 };
